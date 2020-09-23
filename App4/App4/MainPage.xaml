@@ -2,10 +2,56 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App4.MainPage">
+    <StackLayout>
+        <Grid x:Name="ListViewStickyHeaderWide" IsVisible="False" Margin="30,30,30,3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="1"/>
 
-    <ListView
-        x:Name="MyListView"
-        HasUnevenRows="True"
-        >
-    </ListView>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1"/>
+            </Grid.ColumnDefinitions>
+
+            <BoxView Grid.Row="0" Grid.ColumnSpan="9" Grid.Column="0" BackgroundColor="Black" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+            <BoxView Grid.Row="2" Grid.ColumnSpan="9" Grid.Column="0" BackgroundColor="Black" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+
+            <BoxView Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"  BackgroundColor="Black" WidthRequest="1" VerticalOptions="FillAndExpand" HorizontalOptions="End"/>
+            <BoxView Grid.Column="2" Grid.Row="0" Grid.RowSpan="3"  BackgroundColor="Black" WidthRequest="1" VerticalOptions="FillAndExpand" HorizontalOptions="End"/>
+            <BoxView Grid.Column="4" Grid.Row="0" Grid.RowSpan="3"  BackgroundColor="Black" WidthRequest="1" VerticalOptions="FillAndExpand" HorizontalOptions="End"/>
+            <BoxView Grid.Column="6" Grid.Row="0" Grid.RowSpan="3"  BackgroundColor="Black" WidthRequest="1" VerticalOptions="FillAndExpand" HorizontalOptions="End"/>
+            <BoxView Grid.Column="8" Grid.Row="0" Grid.RowSpan="3"  BackgroundColor="Black" WidthRequest="1" VerticalOptions="FillAndExpand" HorizontalOptions="End"/>
+
+
+            <Label Grid.Row="1" Grid.Column="1" Text="Status" FontSize="30" FontAttributes="Bold" VerticalOptions="FillAndExpand"/>
+            <Label Grid.Row="1" Grid.Column="3" Text="Value" FontSize="30" FontAttributes="Bold" VerticalOptions="FillAndExpand"/>
+            <Label Grid.Row="1" Grid.Column="5" Text="Time" FontSize="30" FontAttributes="Bold" VerticalOptions="FillAndExpand"/>
+            <Label Grid.Row="1" Grid.Column="7" Text="Type" FontSize="30" FontAttributes="Bold" VerticalOptions="FillAndExpand"/>
+        </Grid>
+        <Grid x:Name="ListViewStickyHeaderNarrow" IsVisible="False" Margin="30,30,30,0" VerticalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Text="Click Any Row For More Information" FontSize="30" FontAttributes="Bold"/>
+        </Grid>
+
+        <ListView
+            x:Name="MyListView"
+            HasUnevenRows="True"
+            Margin="30,0,30,30"
+            >
+        </ListView>
+    </StackLayout>
 </ContentPage>
